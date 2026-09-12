@@ -1,5 +1,5 @@
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Home from './pages/Home.jsx'
 import Styles from './pages/Styles.jsx'
@@ -7,8 +7,16 @@ import StyleDetail from './pages/StyleDetail.jsx'
 import Artists from './pages/Artists.jsx'
 import Favorites from './pages/Favorites.jsx'
 import SearchResults from './pages/SearchResults.jsx'
-import Admin from './pages/Admin.jsx'
 import './pages/pages.css'
+
+/*
+ * The local admin tool only ever makes sense on the machine it's built
+ * on — it writes straight to this checkout's disk via the File System
+ * Access API. Gating the import behind import.meta.env.DEV means Vite
+ * drops the module (and this whole route) from a production build
+ * entirely; `npm run build` output never contains it.
+ */
+const AdminLazy = import.meta.env.DEV ? lazy(() => import('./pages/Admin.jsx')) : null
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -44,7 +52,16 @@ export default function App() {
         <Route path="/artists" element={<Artists />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/search" element={<SearchResults />} />
-        <Route path="/local-admin" element={<Admin />} />
+        {AdminLazy && (
+          <Route
+            path="/local-admin"
+            element={
+              <Suspense fallback={null}>
+                <AdminLazy />
+              </Suspense>
+            }
+          />
+        )}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <a

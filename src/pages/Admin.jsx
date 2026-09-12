@@ -8,9 +8,7 @@ import {
   writeAssetFile,
   writeDataJson,
 } from '../lib/localFs.js'
-
-const ADMIN_PASSWORD = 'dovme2026' // change this, then tell only the studio admin
-const SESSION_KEY = 'ta-admin-ok'
+import './Admin.css'
 
 const SUBJECTS = FILTER_GROUPS.find((g) => g.key === 'subject').options
 const BODY_PARTS = FILTER_GROUPS.find((g) => g.key === 'bodyPart').options
@@ -23,46 +21,6 @@ function sanitizeName(name) {
 function extOf(filename) {
   const m = filename.match(/\.[^.]+$/)
   return m ? m[0] : ''
-}
-
-/* ---------- gate ---------- */
-
-function PasswordGate({ onOk }) {
-  const [value, setValue] = useState('')
-  const [error, setError] = useState('')
-
-  function submit(e) {
-    e.preventDefault()
-    if (value === ADMIN_PASSWORD) {
-      sessionStorage.setItem(SESSION_KEY, '1')
-      onOk()
-    } else {
-      setError('Yanlış şifre.')
-    }
-  }
-
-  return (
-    <main className="page admin-gate">
-      <header className="section-head">
-        <p className="eyebrow">Admin</p>
-        <h1 className="display">Giriş</h1>
-        <p className="lede">Bu sayfa sadece stüdyo admini içindir.</p>
-      </header>
-      <form onSubmit={submit} className="admin-gate__form">
-        <input
-          type="password"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder="Şifre"
-          autoFocus
-        />
-        <button type="submit" className="btn btn--solid">
-          Giriş yap
-        </button>
-      </form>
-      {error && <p className="admin-msg admin-msg--error">{error}</p>}
-    </main>
-  )
 }
 
 /* ---------- upload ---------- */
@@ -438,9 +396,6 @@ function AdminHome() {
   )
 }
 
-export default function Admin() {
-  const [ok, setOk] = useState(() => sessionStorage.getItem(SESSION_KEY) === '1')
-
-  if (!ok) return <PasswordGate onOk={() => setOk(true)} />
+export default function AdminPage() {
   return <AdminHome />
 }

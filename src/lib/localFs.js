@@ -12,11 +12,24 @@
    person running it locally against their own checkout.
    ------------------------------------------------------------ */
 
+/**
+ * Every export below touches the local disk. Even though this module is
+ * only ever imported by the dev-only admin route (excluded from
+ * production builds, see App.jsx), each function also refuses to run
+ * outside `npm run dev` on its own — belt and suspenders.
+ */
+function assertDev() {
+  if (!import.meta.env.DEV) {
+    throw new Error('localFs is only available in development.')
+  }
+}
+
 export function isSupported() {
   return typeof window !== 'undefined' && 'showDirectoryPicker' in window
 }
 
 export async function pickProjectRoot() {
+  assertDev()
   const handle = await window.showDirectoryPicker({ id: 'tattoo-archive-admin' })
   // Sanity check: this should be the folder that contains package.json + src.
   try {
@@ -42,6 +55,7 @@ async function getSubdir(rootHandle, parts, { create = false } = {}) {
 
 /** Write a File/Blob into src/assets/<...parts>/<filename>. */
 export async function writeAssetFile(rootHandle, parts, filename, fileOrBlob) {
+  assertDev()
   const dir = await getSubdir(rootHandle, ['src', 'assets', ...parts], { create: true })
   const fileHandle = await dir.getFileHandle(filename, { create: true })
   const writable = await fileHandle.createWritable()
@@ -51,6 +65,7 @@ export async function writeAssetFile(rootHandle, parts, filename, fileOrBlob) {
 
 /** Overwrite src/data/<name>.json with a JS value (pretty-printed). */
 export async function writeDataJson(rootHandle, name, value) {
+  assertDev()
   const dir = await getSubdir(rootHandle, ['src', 'data'], { create: false })
   const fileHandle = await dir.getFileHandle(`${name}.json`, { create: false })
   const writable = await fileHandle.createWritable()

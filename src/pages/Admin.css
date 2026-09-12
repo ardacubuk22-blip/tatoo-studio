@@ -1,0 +1,147 @@
+/* Dev-only admin tool styles. Imported solely by Admin.jsx, which is
+   itself excluded from production builds — this file never ships. */
+
+.admin-panel {
+  max-width: 640px;
+  padding-bottom: clamp(48px, 10vw, 100px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-panel__title {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.admin-panel__subtitle {
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+  margin: 12px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--c-line);
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-field__label {
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+}
+
+.admin-field select,
+.admin-field input[type='text'],
+.admin-field input[type='file'],
+.admin-field textarea {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  color: var(--c-text);
+  padding: 10px 12px;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.admin-radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--c-text-dim);
+}
+
+.admin-radio-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-tag-row select,
+.admin-tag-row input {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  color: var(--c-text);
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.admin-file-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 12px;
+  color: var(--c-text-dim);
+}
+
+.admin-artist-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  gap: 8px;
+}
+
+.admin-artist-row input,
+.admin-artist-row select {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  color: var(--c-text);
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .admin-artist-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.admin-tab {
+  padding: 8px 16px;
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+  border: 1px solid var(--c-line);
+}
+
+.admin-tab.is-on {
+  color: var(--c-bg);
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+}
+
+.admin-msg {
+  font-size: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--c-line);
+}
+
+.admin-msg--ok {
+  color: var(--c-accent);
+  border-color: var(--c-accent);
+}
+
+.admin-msg--error {
+  color: #c0655a;
+  border-color: #c0655a;
+}
