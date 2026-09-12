@@ -1,0 +1,165 @@
+/* ============================================================
+   TATTOO ARCHIVE — global design system
+   Premium digital art gallery: black / white / light grey,
+   minimal typography, generous whitespace, image first.
+   ============================================================ */
+
+:root {
+  /* palette */
+  --c-bg: #0a0a0a;
+  --c-bg-raised: #131313;
+  --c-surface: #1a1a1a;
+  --c-line: #262626;
+  --c-text: #f4f4f4;
+  --c-text-dim: #a3a3a3;
+  --c-text-faint: #6b6b6b;
+  --c-accent: #ffffff;
+
+  /* type */
+  --font-sans: "Helvetica Neue", Helvetica, Arial, "Segoe UI", system-ui, sans-serif;
+  --tracking-wide: 0.18em;
+  --tracking-wider: 0.32em;
+
+  /* rhythm */
+  --page-max: 1600px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --grid-gap: clamp(8px, 1.4vw, 20px);
+
+  /* motion — subtle only */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.35s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 1px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- shared primitives ---------- */
+
+.page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+  margin: 0;
+}
+
+.display {
+  font-size: clamp(1.6rem, 4.4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.lede {
+  max-width: 46ch;
+  color: var(--c-text-dim);
+  font-size: 14px;
+  margin: 0;
+}
+
+.section-head {
+  padding: clamp(48px, 9vw, 120px) 0 clamp(20px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--c-line);
+  border: 0;
+  margin: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid var(--c-line);
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text);
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+
+.btn:hover {
+  border-color: var(--c-accent);
+}
+
+.btn--solid {
+  background: var(--c-accent);
+  color: #0a0a0a;
+  border-color: var(--c-accent);
+}
+
+.btn--solid:hover {
+  background: #d9d9d9;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

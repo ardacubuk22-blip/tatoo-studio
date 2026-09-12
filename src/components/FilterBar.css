@@ -1,0 +1,68 @@
+.filterbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 3vw, 44px);
+  align-items: flex-start;
+  padding: 22px 0 26px;
+}
+
+.filterbar__group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filterbar__label {
+  font-size: 10px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+}
+
+.filterbar__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 6px 12px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+  border: 1px solid var(--c-line);
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+
+.chip:hover {
+  color: var(--c-text);
+  border-color: var(--c-text-faint);
+}
+
+.chip.is-on {
+  color: #0a0a0a;
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+}
+
+.filterbar__clear {
+  margin-left: auto;
+  align-self: flex-end;
+  font-size: 10px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+  transition: color var(--dur) var(--ease);
+}
+
+.filterbar__clear:hover {
+  color: var(--c-text);
+}
+
+@media (max-width: 720px) {
+  .filterbar {
+    gap: 16px 24px;
+  }
+}

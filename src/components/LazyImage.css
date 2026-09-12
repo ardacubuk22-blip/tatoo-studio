@@ -1,0 +1,15 @@
+.lazy-img {
+  background: var(--c-surface);
+  opacity: 0;
+  transition: opacity 0.45s var(--ease);
+}
+
+.lazy-img.is-loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lazy-img {
+    transition: none;
+  }
+}

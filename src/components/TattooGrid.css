@@ -1,0 +1,27 @@
+.tattoo-grid {
+  column-gap: var(--grid-gap);
+  column-count: 4;
+}
+
+@media (max-width: 1200px) {
+  .tattoo-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 820px) {
+  .tattoo-grid {
+    column-count: 2;
+  }
+}
+
+/* mobile keeps 2 columns on purpose — Instagram-like browsing */
+
+.grid-empty {
+  padding: clamp(48px, 12vw, 140px) 0;
+  text-align: center;
+  color: var(--c-text-faint);
+  font-size: 12px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}

@@ -1,0 +1,112 @@
+/* ---------- Styles page ---------- */
+
+.style-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2.6vw, 40px) clamp(12px, 2vw, 28px);
+  padding-bottom: clamp(60px, 12vw, 140px);
+}
+
+@media (max-width: 1100px) {
+  .style-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .style-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Style detail ---------- */
+
+.style-detail__count {
+  padding: 18px 0 24px;
+  font-size: 10px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+}
+
+/* ---------- Artists ---------- */
+
+.artist-section {
+  padding: clamp(28px, 6vw, 64px) 0;
+  border-top: 1px solid var(--c-line);
+}
+
+.artist-section:first-of-type {
+  border-top: 0;
+}
+
+.artist-section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.artist-section__title {
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.artist-section__more {
+  font-size: 10px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+  transition: color var(--dur) var(--ease);
+}
+
+.artist-section__more:hover {
+  color: var(--c-text);
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 44px);
+}
+
+@media (max-width: 960px) {
+  .artist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .artist-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Search ---------- */
+
+.search-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--c-line);
+  margin-top: clamp(60px, 12vw, 140px);
+  padding: 40px 0 56px;
+}
+
+.site-footer .page {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 10px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+}
