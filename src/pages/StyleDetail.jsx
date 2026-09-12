@@ -32,6 +32,7 @@ export default function StyleDetail() {
       <header className="section-head">
         <h1 className="display">{style.name}</h1>
         <p className="lede">{style.description}</p>
+        {style.price && <p className="style-detail__price">{style.price}</p>}
       </header>
 
       <FilterBar groups={FILTER_GROUPS} selected={filters} onChange={setFilters} />

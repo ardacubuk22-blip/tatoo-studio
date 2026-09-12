@@ -21,6 +21,14 @@
 
 /* ---------- Style detail ---------- */
 
+.style-detail__price {
+  font-size: 13px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-accent);
+  margin: 0;
+}
+
 .style-detail__count {
   padding: 18px 0 24px;
   font-size: 10px;

@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "src/assets/uploads"
-public_folder: "/src/assets/uploads"
+media_folder: "public/uploads"
+public_folder: "/uploads"
 
 locale: "tr"
 
@@ -22,6 +22,8 @@ collections:
               - { label: "Slug", name: "slug", widget: "string" }
               - { label: "İsim", name: "name", widget: "string" }
               - { label: "Açıklama", name: "description", widget: "text" }
+              - { label: "Kapak Fotoğrafı", name: "image", widget: "image", required: false }
+              - { label: "Fiyat", name: "price", widget: "string", required: false, hint: "Örn: 1500₺'den başlıyor" }
 
   - name: "artists"
     label: "Sanatçılar"
