@@ -9,10 +9,11 @@ export default function ArtistCard({ artist }) {
   return (
     <article className="artist-card">
       <div className="artist-card__portfolio">
-        {artist.portfolio.slice(0, 3).map((src, i) => (
+        {artist.portfolio.slice(0, 3).map((item, i) => (
           <LazyImage
             key={i}
-            src={src}
+            src={item.url}
+            kind={item.kind}
             alt={`${artist.name} portfolio ${i + 1}`}
             width={800}
             height={1000}

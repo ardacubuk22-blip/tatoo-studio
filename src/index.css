@@ -6,14 +6,22 @@
 
 :root {
   /* palette */
-  --c-bg: #0a0a0a;
-  --c-bg-raised: #131313;
-  --c-surface: #1a1a1a;
-  --c-line: #262626;
-  --c-text: #f4f4f4;
-  --c-text-dim: #a3a3a3;
-  --c-text-faint: #6b6b6b;
-  --c-accent: #ffffff;
+  --c-bg: #0d0c0a;
+  --c-bg-raised: #17140f;
+  --c-surface: #1f1b14;
+  --c-line: #332c20;
+  --c-text: #f2efe6;
+  --c-text-dim: #b0a68d;
+  --c-text-faint: #776b4f;
+  --c-accent: #a68a5c;
+  --c-accent-hover: #c1a273;
+
+  /* third neutral — warm bone, used sparingly for panels like the tattoo detail card */
+  --c-cream: #ece4d3;
+  --c-cream-line: #d6c9a8;
+  --c-ink: #221d13;
+  --c-ink-dim: #5c4f38;
+  --c-ink-faint: #8a7c5c;
 
   /* type */
   --font-sans: "Helvetica Neue", Helvetica, Arial, "Segoe UI", system-ui, sans-serif;
@@ -144,12 +152,33 @@ ul {
 
 .btn--solid {
   background: var(--c-accent);
-  color: #0a0a0a;
+  color: var(--c-bg);
   border-color: var(--c-accent);
 }
 
 .btn--solid:hover {
-  background: #d9d9d9;
+  background: var(--c-accent-hover);
+}
+
+.whatsapp-fab {
+  position: fixed;
+  right: clamp(16px, 4vw, 28px);
+  bottom: clamp(16px, 4vw, 28px);
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  color: var(--c-bg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.whatsapp-fab:hover {
+  background: var(--c-accent-hover);
+  transform: translateY(-2px);
 }
 
 .visually-hidden {

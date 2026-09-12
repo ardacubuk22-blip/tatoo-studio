@@ -1,0 +1,16 @@
+{
+  "artists": [
+    { "id": "a-001", "name": "Mara Vance", "city": "Berlin", "mainStyle": "black-and-grey", "instagram": "" },
+    { "id": "a-002", "name": "Deniz Akın", "city": "Istanbul", "mainStyle": "realism", "instagram": "" },
+    { "id": "a-003", "name": "Lena Ó", "city": "Lisbon", "mainStyle": "fine-line", "instagram": "" },
+    { "id": "a-004", "name": "Kaito Mori", "city": "Osaka", "mainStyle": "japanese", "instagram": "" },
+    { "id": "a-005", "name": "Sofia Reyes", "city": "Mexico City", "mainStyle": "blackwork", "instagram": "" },
+    { "id": "a-006", "name": "Elias Grieve", "city": "London", "mainStyle": "ornamental", "instagram": "" },
+    { "id": "a-007", "name": "Nora Halvorsen", "city": "Oslo", "mainStyle": "minimal", "instagram": "" },
+    { "id": "a-008", "name": "Marco Ferri", "city": "Rome", "mainStyle": "realism", "instagram": "" },
+    { "id": "a-009", "name": "Yuki Tan", "city": "Singapore", "mainStyle": "black-and-grey", "instagram": "" },
+    { "id": "a-010", "name": "Ida Brenner", "city": "Vienna", "mainStyle": "fine-line", "instagram": "" },
+    { "id": "a-011", "name": "Rafael Sol", "city": "São Paulo", "mainStyle": "traditional", "instagram": "" },
+    { "id": "a-012", "name": "Hana Petrova", "city": "Prague", "mainStyle": "japanese", "instagram": "" }
+  ]
+}

@@ -15,6 +15,7 @@ import './LazyImage.css'
  * props:
  *   src, alt, width, height, className
  *   eager  load immediately (use for the first screenful)
+ *   kind   'image' (default) or 'video'
  */
 export default function LazyImage({
   src,
@@ -23,8 +24,26 @@ export default function LazyImage({
   height,
   className = '',
   eager = false,
+  kind = 'image',
 }) {
   const [loaded, setLoaded] = useState(false)
+
+  if (kind === 'video') {
+    return (
+      <video
+        className={`lazy-img ${className}${loaded ? ' is-loaded' : ''}`}
+        src={src}
+        width={width}
+        height={height}
+        muted
+        loop
+        playsInline
+        autoPlay
+        preload={eager ? 'auto' : 'metadata'}
+        onLoadedData={() => setLoaded(true)}
+      />
+    )
+  }
 
   return (
     <img

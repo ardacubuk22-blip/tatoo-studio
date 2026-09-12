@@ -42,7 +42,7 @@
 }
 
 .chip.is-on {
-  color: #0a0a0a;
+  color: var(--c-bg);
   background: var(--c-accent);
   border-color: var(--c-accent);
 }

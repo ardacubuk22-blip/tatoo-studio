@@ -9,26 +9,15 @@
 
 import { ARTIST_PORTFOLIO } from './assets.js'
 import { placeholder } from '../lib/placeholder.js'
-
-const DEFINITIONS = [
-  { id: 'a-001', name: 'Mara Vance', city: 'Berlin', mainStyle: 'black-and-grey' },
-  { id: 'a-002', name: 'Deniz Akın', city: 'Istanbul', mainStyle: 'realism' },
-  { id: 'a-003', name: 'Lena Ó', city: 'Lisbon', mainStyle: 'fine-line' },
-  { id: 'a-004', name: 'Kaito Mori', city: 'Osaka', mainStyle: 'japanese' },
-  { id: 'a-005', name: 'Sofia Reyes', city: 'Mexico City', mainStyle: 'blackwork' },
-  { id: 'a-006', name: 'Elias Grieve', city: 'London', mainStyle: 'ornamental' },
-  { id: 'a-007', name: 'Nora Halvorsen', city: 'Oslo', mainStyle: 'minimal' },
-  { id: 'a-008', name: 'Marco Ferri', city: 'Rome', mainStyle: 'realism' },
-  { id: 'a-009', name: 'Yuki Tan', city: 'Singapore', mainStyle: 'black-and-grey' },
-  { id: 'a-010', name: 'Ida Brenner', city: 'Vienna', mainStyle: 'fine-line' },
-  { id: 'a-011', name: 'Rafael Sol', city: 'São Paulo', mainStyle: 'traditional' },
-  { id: 'a-012', name: 'Hana Petrova', city: 'Prague', mainStyle: 'japanese' },
-]
+import { artists as DEFINITIONS } from './artists.json'
 
 function portfolioFor(id) {
   const real = ARTIST_PORTFOLIO[id]
   if (real && real.length > 0) return real
-  return [1, 2, 3].map((n) => placeholder(`artist-${id}-${n}`, 800, 1000))
+  return [1, 2, 3].map((n) => ({
+    url: placeholder(`artist-${id}-${n}`, 800, 1000),
+    kind: 'image',
+  }))
 }
 
 export const ARTISTS = DEFINITIONS.map((a) => ({

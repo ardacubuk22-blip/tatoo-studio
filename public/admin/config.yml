@@ -1,0 +1,133 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "/src/assets/uploads"
+
+locale: "tr"
+
+collections:
+  - name: "styles"
+    label: "Stiller"
+    files:
+      - file: "src/data/styles.json"
+        label: "Stil Açıklamaları"
+        name: "styles_file"
+        fields:
+          - label: "Stiller"
+            name: "styles"
+            widget: "list"
+            fields:
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "İsim", name: "name", widget: "string" }
+              - { label: "Açıklama", name: "description", widget: "text" }
+
+  - name: "artists"
+    label: "Sanatçılar"
+    files:
+      - file: "src/data/artists.json"
+        label: "Sanatçı Listesi"
+        name: "artists_file"
+        fields:
+          - label: "Sanatçılar"
+            name: "artists"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "İsim", name: "name", widget: "string" }
+              - { label: "Şehir", name: "city", widget: "string" }
+              - label: "Ana Stil"
+                name: "mainStyle"
+                widget: "select"
+                options:
+                  - { label: "Black & Grey", value: "black-and-grey" }
+                  - { label: "Realism", value: "realism" }
+                  - { label: "Fine Line", value: "fine-line" }
+                  - { label: "Blackwork", value: "blackwork" }
+                  - { label: "Minimal", value: "minimal" }
+                  - { label: "Traditional", value: "traditional" }
+                  - { label: "Neo Traditional", value: "neo-traditional" }
+                  - { label: "Japanese", value: "japanese" }
+                  - { label: "Ornamental", value: "ornamental" }
+                  - { label: "Geometric", value: "geometric" }
+                  - { label: "Dotwork", value: "dotwork" }
+                  - { label: "Lettering", value: "lettering" }
+                  - { label: "Abstract", value: "abstract" }
+                  - { label: "Trash Polka", value: "trash-polka" }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+
+  - name: "tattoos"
+    label: "Dövme Fotoğrafları"
+    folder: "src/assets/tattoos"
+    create: true
+    extension: "json"
+    format: "json"
+    path: "{{fields.style}}/{{slug}}"
+    media_folder: ""
+    public_folder: ""
+    slug: "{{fields.motif}}-{{uuid}}"
+    fields:
+      - label: "Stil"
+        name: "style"
+        widget: "select"
+        options:
+          - black-and-grey
+          - realism
+          - fine-line
+          - blackwork
+          - minimal
+          - traditional
+          - neo-traditional
+          - japanese
+          - ornamental
+          - geometric
+          - dotwork
+          - lettering
+          - abstract
+          - trash-polka
+      - { label: "Fotoğraf / Video", name: "image", widget: "file" }
+      - label: "Konu"
+        name: "subject"
+        widget: "select"
+        required: false
+        options: ["Portrait", "Animal", "Flower", "Skull", "Nature", "Abstract"]
+      - label: "Vücut Bölgesi"
+        name: "bodyPart"
+        widget: "select"
+        required: false
+        options: ["Arm", "Forearm", "Hand", "Chest", "Back", "Leg"]
+      - label: "Boyut"
+        name: "size"
+        widget: "select"
+        required: false
+        options: ["Small", "Medium", "Large", "Sleeve"]
+      - { label: "Motif", name: "motif", widget: "string", required: false }
+
+  - name: "artist_photos"
+    label: "Sanatçı Portfolyosu"
+    folder: "src/assets/artists"
+    create: true
+    extension: "json"
+    format: "json"
+    path: "{{fields.artistId}}/{{slug}}"
+    media_folder: ""
+    public_folder: ""
+    fields:
+      - label: "Sanatçı"
+        name: "artistId"
+        widget: "select"
+        options:
+          - { label: "Mara Vance", value: "a-001" }
+          - { label: "Deniz Akın", value: "a-002" }
+          - { label: "Lena Ó", value: "a-003" }
+          - { label: "Kaito Mori", value: "a-004" }
+          - { label: "Sofia Reyes", value: "a-005" }
+          - { label: "Elias Grieve", value: "a-006" }
+          - { label: "Nora Halvorsen", value: "a-007" }
+          - { label: "Marco Ferri", value: "a-008" }
+          - { label: "Yuki Tan", value: "a-009" }
+          - { label: "Ida Brenner", value: "a-010" }
+          - { label: "Rafael Sol", value: "a-011" }
+          - { label: "Hana Petrova", value: "a-012" }
+      - { label: "Fotoğraf / Video", name: "image", widget: "file" }

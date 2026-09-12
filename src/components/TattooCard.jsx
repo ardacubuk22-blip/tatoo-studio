@@ -28,6 +28,7 @@ export default function TattooCard({ tattoo, onOpen, showStyle = true, eager = f
           width={tattoo.width || 900}
           height={tattoo.height || 1200}
           eager={eager}
+          kind={tattoo.kind || 'image'}
         />
         {showStyle && (
           <span className="tattoo-card__style">{styleName(tattoo.style)}</span>

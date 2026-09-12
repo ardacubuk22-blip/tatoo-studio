@@ -29,8 +29,10 @@
 
 import { FILTER_GROUPS } from './filters.js'
 
+const VIDEO_EXT = /\.(mp4|MP4|webm|WEBM|mov|MOV)$/
+
 const TATTOO_FILES = import.meta.glob(
-  '../assets/tattoos/*/*.{jpg,jpeg,JPG,JPEG,png,PNG,webp,WEBP,avif,AVIF}',
+  '../assets/tattoos/*/*.{jpg,jpeg,JPG,JPEG,png,PNG,webp,WEBP,avif,AVIF,mp4,MP4,webm,WEBM,mov,MOV}',
   { eager: true, query: '?url', import: 'default' },
 )
 
@@ -40,7 +42,7 @@ const STYLE_FILES = import.meta.glob(
 )
 
 const ARTIST_FILES = import.meta.glob(
-  '../assets/artists/*/*.{jpg,jpeg,JPG,JPEG,png,PNG,webp,WEBP,avif,AVIF}',
+  '../assets/artists/*/*.{jpg,jpeg,JPG,JPEG,png,PNG,webp,WEBP,avif,AVIF,mp4,MP4,webm,WEBM,mov,MOV}',
   { eager: true, query: '?url', import: 'default' },
 )
 
@@ -97,6 +99,7 @@ export const TATTOO_ASSETS = Object.entries(TATTOO_FILES)
     return {
       id: `p-${String(i + 1).padStart(3, '0')}`,
       image: url,
+      kind: VIDEO_EXT.test(path) ? 'video' : 'image',
       style: folderName(path),
       subject: tags.subject,
       bodyPart: tags.bodyPart,
@@ -112,12 +115,12 @@ export const STYLE_HERO = Object.fromEntries(
   Object.entries(STYLE_FILES).map(([path, url]) => [baseName(path), url]),
 )
 
-/** artist id -> [image urls] */
+/** artist id -> [{ url, kind }] */
 export const ARTIST_PORTFOLIO = Object.entries(ARTIST_FILES)
   .sort(([a], [b]) => a.localeCompare(b))
   .reduce((acc, [path, url]) => {
     const id = folderName(path)
-    ;(acc[id] ||= []).push(url)
+    ;(acc[id] ||= []).push({ url, kind: VIDEO_EXT.test(path) ? 'video' : 'image' })
     return acc
   }, {})
 

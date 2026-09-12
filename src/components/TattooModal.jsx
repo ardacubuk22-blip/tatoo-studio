@@ -57,7 +57,11 @@ export default function TattooModal({ tattoo, onClose }) {
         </button>
 
         <div className="modal__image">
-          <img src={tattoo.image} alt={`${styleName(tattoo.style)} — ${tattoo.motif}`} />
+          {tattoo.kind === 'video' ? (
+            <video src={tattoo.image} controls autoPlay muted loop playsInline />
+          ) : (
+            <img src={tattoo.image} alt={`${styleName(tattoo.style)} — ${tattoo.motif}`} />
+          )}
         </div>
 
         <div className="modal__panel">

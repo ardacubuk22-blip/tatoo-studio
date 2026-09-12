@@ -42,7 +42,8 @@
   min-height: 0;
 }
 
-.modal__image img {
+.modal__image img,
+.modal__image video {
   width: 100%;
   height: auto;
   max-height: 82vh;
@@ -51,11 +52,21 @@
 }
 
 .modal__panel {
+  /* scoped overrides: everything inside reads these instead of the dark-theme tokens */
+  --c-bg: var(--c-cream);
+  --c-text: var(--c-ink);
+  --c-text-dim: var(--c-ink-dim);
+  --c-text-faint: var(--c-ink-faint);
+  --c-line: var(--c-cream-line);
+
   padding: clamp(20px, 3vw, 40px) clamp(20px, 3vw, 36px);
   display: flex;
   flex-direction: column;
   gap: 28px;
-  align-self: center;
+  justify-content: center;
+  align-self: stretch;
+  background: var(--c-cream);
+  color: var(--c-ink);
 }
 
 .modal__meta {
