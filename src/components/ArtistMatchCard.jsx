@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { styleName } from '../data/styles.js'
 import LazyImage from './LazyImage.jsx'
+import InstagramLink from './InstagramLink.jsx'
 import './ArtistMatchCard.css'
 
 const ANSWER_LABELS = {
@@ -82,6 +83,8 @@ export default function ArtistMatchCard({ artist, reasons, answers }) {
           {artist.city}
           {price && <> &middot; {price}</>}
         </p>
+
+        <InstagramLink handle={artist.instagram} />
 
         {reasons.length > 0 && (
           <p className="match-card__reason">

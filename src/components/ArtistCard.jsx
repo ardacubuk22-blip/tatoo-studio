@@ -1,5 +1,6 @@
 import { styleName } from '../data/styles.js'
 import LazyImage from './LazyImage.jsx'
+import InstagramLink from './InstagramLink.jsx'
 import './ArtistCard.css'
 
 /**
@@ -25,6 +26,7 @@ export default function ArtistCard({ artist }) {
         <span className="artist-card__sub">
           {artist.city} &middot; {styleName(artist.mainStyle)}
         </span>
+        <InstagramLink handle={artist.instagram} className="artist-card__instagram" />
       </div>
     </article>
   )
