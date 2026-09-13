@@ -1,0 +1,78 @@
+.match-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid var(--c-line);
+  padding: 16px;
+  background: var(--c-bg-raised);
+}
+
+.match-card__portfolio {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  aspect-ratio: 4 / 2;
+}
+
+.match-card__portfolio img,
+.match-card__portfolio video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.02);
+}
+
+.match-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.match-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.match-card__name {
+  font-size: 14px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.match-card__badge {
+  font-size: 10px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-bg);
+  background: var(--c-accent);
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+
+.match-card__meta {
+  margin: 0;
+  font-size: 12px;
+  color: var(--c-text-dim);
+}
+
+.match-card__reason {
+  margin: 0;
+  font-size: 12px;
+  color: var(--c-text-faint);
+}
+
+.match-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+@media (max-width: 480px) {
+  .match-card__portfolio {
+    grid-template-columns: repeat(4, 1fr);
+    aspect-ratio: 4 / 3;
+  }
+}

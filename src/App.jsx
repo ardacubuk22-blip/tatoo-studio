@@ -7,6 +7,7 @@ import StyleDetail from './pages/StyleDetail.jsx'
 import Artists from './pages/Artists.jsx'
 import Favorites from './pages/Favorites.jsx'
 import SearchResults from './pages/SearchResults.jsx'
+import MatchQuizModal from './components/MatchQuizModal.jsx'
 import './pages/pages.css'
 
 /*
@@ -64,6 +65,9 @@ export default function App() {
         )}
         <Route path="*" element={<NotFound />} />
       </Routes>
+
+      <MatchQuizModal />
+
       <a
         className="whatsapp-fab"
         href="https://wa.me/905359862655"

@@ -1,0 +1,65 @@
+.body-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.body-map__toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.body-map__toggle-btn {
+  padding: 6px 16px;
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+  border: 1px solid var(--c-line);
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.body-map__toggle-btn.is-on {
+  color: var(--c-bg);
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+}
+
+.body-map__figure {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+
+.body-map__silhouette {
+  fill: var(--c-surface);
+  stroke: var(--c-line);
+  stroke-width: 1;
+}
+
+.body-map__region {
+  fill: transparent;
+  stroke: transparent;
+  cursor: pointer;
+  transition: fill var(--dur) var(--ease);
+}
+
+.body-map__region:hover,
+.body-map__region:focus-visible {
+  fill: color-mix(in srgb, var(--c-accent) 30%, transparent);
+  outline: none;
+}
+
+.body-map__region.is-selected {
+  fill: color-mix(in srgb, var(--c-accent) 65%, transparent);
+}
+
+.body-map__value {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+  min-height: 1.4em;
+}

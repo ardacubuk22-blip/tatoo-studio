@@ -1,16 +1,124 @@
 {
   "artists": [
-    { "id": "a-001", "name": "Mara Vance", "city": "Berlin", "mainStyle": "black-and-grey", "instagram": "" },
-    { "id": "a-002", "name": "Deniz Akın", "city": "Istanbul", "mainStyle": "realism", "instagram": "" },
-    { "id": "a-003", "name": "Lena Ó", "city": "Lisbon", "mainStyle": "fine-line", "instagram": "" },
-    { "id": "a-004", "name": "Kaito Mori", "city": "Osaka", "mainStyle": "japanese", "instagram": "" },
-    { "id": "a-005", "name": "Sofia Reyes", "city": "Mexico City", "mainStyle": "blackwork", "instagram": "" },
-    { "id": "a-006", "name": "Elias Grieve", "city": "London", "mainStyle": "ornamental", "instagram": "" },
-    { "id": "a-007", "name": "Nora Halvorsen", "city": "Oslo", "mainStyle": "minimal", "instagram": "" },
-    { "id": "a-008", "name": "Marco Ferri", "city": "Rome", "mainStyle": "realism", "instagram": "" },
-    { "id": "a-009", "name": "Yuki Tan", "city": "Singapore", "mainStyle": "black-and-grey", "instagram": "" },
-    { "id": "a-010", "name": "Ida Brenner", "city": "Vienna", "mainStyle": "fine-line", "instagram": "" },
-    { "id": "a-011", "name": "Rafael Sol", "city": "São Paulo", "mainStyle": "traditional", "instagram": "" },
-    { "id": "a-012", "name": "Hana Petrova", "city": "Prague", "mainStyle": "japanese", "instagram": "" }
+    {
+      "id": "a-001",
+      "name": "Mara Vance",
+      "city": "Kadıköy",
+      "mainStyle": "black-and-grey",
+      "styles": ["black-and-grey", "realism", "dotwork"],
+      "instagram": "",
+      "priceRange": { "min": 2000, "max": 6000 },
+      "priceNote": "seans başı"
+    },
+    {
+      "id": "a-002",
+      "name": "Deniz Akın",
+      "city": "Beşiktaş",
+      "mainStyle": "realism",
+      "styles": ["realism", "black-and-grey"],
+      "instagram": "",
+      "priceRange": { "min": 3000, "max": 9000 },
+      "priceNote": "boyuta göre değişir"
+    },
+    {
+      "id": "a-003",
+      "name": "Lena Ó",
+      "city": "Şişli",
+      "mainStyle": "fine-line",
+      "styles": ["fine-line", "minimal", "lettering"],
+      "instagram": "",
+      "priceRange": { "min": 1500, "max": 4000 },
+      "priceNote": "minimum ücret 1500₺"
+    },
+    {
+      "id": "a-004",
+      "name": "Kaito Mori",
+      "city": "Üsküdar",
+      "mainStyle": "japanese",
+      "styles": ["japanese", "neo-traditional", "ornamental"],
+      "instagram": "",
+      "priceRange": { "min": 4000, "max": 12000 },
+      "priceNote": "büyük projelerde seans bazlı"
+    },
+    {
+      "id": "a-005",
+      "name": "Sofia Reyes",
+      "city": "Beyoğlu",
+      "mainStyle": "blackwork",
+      "styles": ["blackwork", "geometric", "dotwork"],
+      "instagram": "",
+      "priceRange": { "min": 2500, "max": 7000 },
+      "priceNote": "seans başı"
+    },
+    {
+      "id": "a-006",
+      "name": "Elias Grieve",
+      "city": "Bakırköy",
+      "mainStyle": "ornamental",
+      "styles": ["ornamental", "geometric", "dotwork"],
+      "instagram": "",
+      "priceRange": { "min": 2000, "max": 6000 },
+      "priceNote": "desene göre değişir"
+    },
+    {
+      "id": "a-007",
+      "name": "Nora Halvorsen",
+      "city": "Ataşehir",
+      "mainStyle": "minimal",
+      "styles": ["minimal", "fine-line", "lettering"],
+      "instagram": "",
+      "priceRange": { "min": 1200, "max": 3000 },
+      "priceNote": "minimum ücret 1200₺"
+    },
+    {
+      "id": "a-008",
+      "name": "Marco Ferri",
+      "city": "Maltepe",
+      "mainStyle": "realism",
+      "styles": ["realism", "black-and-grey", "neo-traditional"],
+      "instagram": "",
+      "priceRange": { "min": 3500, "max": 10000 },
+      "priceNote": "seans başı"
+    },
+    {
+      "id": "a-009",
+      "name": "Yuki Tan",
+      "city": "Kadıköy",
+      "mainStyle": "black-and-grey",
+      "styles": ["black-and-grey", "dotwork", "realism"],
+      "instagram": "",
+      "priceRange": { "min": 2200, "max": 6500 },
+      "priceNote": "boyuta göre değişir"
+    },
+    {
+      "id": "a-010",
+      "name": "Ida Brenner",
+      "city": "Şişli",
+      "mainStyle": "fine-line",
+      "styles": ["fine-line", "minimal", "lettering"],
+      "instagram": "",
+      "priceRange": { "min": 1400, "max": 3800 },
+      "priceNote": "minimum ücret 1400₺"
+    },
+    {
+      "id": "a-011",
+      "name": "Rafael Sol",
+      "city": "Beşiktaş",
+      "mainStyle": "traditional",
+      "styles": ["traditional", "neo-traditional", "lettering"],
+      "instagram": "",
+      "priceRange": { "min": 2000, "max": 5500 },
+      "priceNote": "seans başı"
+    },
+    {
+      "id": "a-012",
+      "name": "Hana Petrova",
+      "city": "Kadıköy",
+      "mainStyle": "japanese",
+      "styles": ["japanese", "ornamental", "geometric"],
+      "instagram": "",
+      "priceRange": { "min": 3800, "max": 11000 },
+      "priceNote": "büyük projelerde seans bazlı"
+    }
   ]
 }

@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { TATTOOS } from '../data/tattoos.js'
 import TattooGrid from '../components/TattooGrid.jsx'
+import { useMatchQuiz } from '../context/MatchQuizContext.jsx'
 
 /* deterministic shuffle so the grid feels curated, not sorted by style */
 function interleave(list) {
@@ -28,6 +29,7 @@ function interleave(list) {
 
 export default function Home() {
   const tattoos = useMemo(() => interleave(TATTOOS), [])
+  const { open } = useMatchQuiz()
 
   return (
     <main className="page">
@@ -37,6 +39,9 @@ export default function Home() {
           Dövme stillerini görseller üzerinden keşfet. İlham veren tasarımları
           kaydet ve tarzına uygun sanatçıyı bul.
         </p>
+        <button type="button" className="btn btn--solid" onClick={open}>
+          Sana Uygun Sanatçıyı Bul
+        </button>
       </header>
 
       <TattooGrid tattoos={tattoos} />

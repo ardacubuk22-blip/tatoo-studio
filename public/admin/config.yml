@@ -38,11 +38,12 @@ collections:
             fields:
               - { label: "ID", name: "id", widget: "string" }
               - { label: "İsim", name: "name", widget: "string" }
-              - { label: "Şehir", name: "city", widget: "string" }
+              - { label: "Şehir / İlçe", name: "city", widget: "string" }
               - label: "Ana Stil"
                 name: "mainStyle"
                 widget: "select"
-                options:
+                hint: "Kartta rozet olarak görünür"
+                options: &style_options
                   - { label: "Black & Grey", value: "black-and-grey" }
                   - { label: "Realism", value: "realism" }
                   - { label: "Fine Line", value: "fine-line" }
@@ -57,6 +58,19 @@ collections:
                   - { label: "Lettering", value: "lettering" }
                   - { label: "Abstract", value: "abstract" }
                   - { label: "Trash Polka", value: "trash-polka" }
+              - label: "Çalıştığı Stiller"
+                name: "styles"
+                widget: "select"
+                multiple: true
+                hint: "Müşteri eşleştirme akışı bu alana göre puanlar"
+                options: *style_options
+              - label: "Fiyat Aralığı"
+                name: "priceRange"
+                widget: "object"
+                fields:
+                  - { label: "Min (₺)", name: "min", widget: "number", value_type: "int" }
+                  - { label: "Max (₺)", name: "max", widget: "number", value_type: "int" }
+              - { label: "Fiyat Notu", name: "priceNote", widget: "string", required: false, hint: "Örn: seans başı, minimum ücret" }
               - { label: "Instagram", name: "instagram", widget: "string", required: false }
 
   - name: "tattoos"
