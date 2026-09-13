@@ -5,6 +5,12 @@
    present; otherwise placeholders stand in. Add, remove or
    rename artists freely — the ids are what the photo folders
    and tattoo records point at.
+
+   `status: "draft"` keeps an artist out of every public list (the
+   Artists page, the matching quiz, tattoo-photo auto-assignment)
+   without deleting their record — flip it to "published" when
+   they're ready to go live. Missing status is treated as published
+   so older records don't need editing.
    ------------------------------------------------------------ */
 
 import { ARTIST_PORTFOLIO } from './assets.js'
@@ -20,7 +26,7 @@ function portfolioFor(id) {
   }))
 }
 
-export const ARTISTS = DEFINITIONS.map((a) => ({
+export const ARTISTS = DEFINITIONS.filter((a) => a.status !== 'draft').map((a) => ({
   ...a,
   portfolio: portfolioFor(a.id),
   /** true once real photos exist for this artist */

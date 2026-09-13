@@ -36,9 +36,23 @@ collections:
             name: "artists"
             widget: "list"
             fields:
-              - { label: "ID", name: "id", widget: "string" }
+              - { label: "ID", name: "id", widget: "string", hint: "Değiştirme — fotoğraf klasörü ve diğer kayıtlar buna bağlı" }
               - { label: "İsim", name: "name", widget: "string" }
+              - label: "Durum"
+                name: "status"
+                widget: "select"
+                default: "draft"
+                options:
+                  - { label: "Taslak (sitede görünmez)", value: "draft" }
+                  - { label: "Yayında", value: "published" }
               - { label: "Şehir / İlçe", name: "city", widget: "string" }
+              - label: "Yaka"
+                name: "side"
+                widget: "select"
+                required: false
+                options:
+                  - { label: "Avrupa", value: "Avrupa" }
+                  - { label: "Asya", value: "Asya" }
               - label: "Ana Stil"
                 name: "mainStyle"
                 widget: "select"
@@ -146,4 +160,5 @@ collections:
           - { label: "Ida Brenner", value: "a-010" }
           - { label: "Rafael Sol", value: "a-011" }
           - { label: "Hana Petrova", value: "a-012" }
+          - { label: "Arda Temeni", value: "arda-temeni" }
       - { label: "Fotoğraf / Video", name: "image", widget: "file" }

@@ -3,7 +3,9 @@
     {
       "id": "a-001",
       "name": "Mara Vance",
+      "status": "published",
       "city": "Kadıköy",
+      "side": "Asya",
       "mainStyle": "black-and-grey",
       "styles": ["black-and-grey", "realism", "dotwork"],
       "instagram": "",
@@ -13,7 +15,9 @@
     {
       "id": "a-002",
       "name": "Deniz Akın",
+      "status": "published",
       "city": "Beşiktaş",
+      "side": "Avrupa",
       "mainStyle": "realism",
       "styles": ["realism", "black-and-grey"],
       "instagram": "",
@@ -23,7 +27,9 @@
     {
       "id": "a-003",
       "name": "Lena Ó",
+      "status": "published",
       "city": "Şişli",
+      "side": "Avrupa",
       "mainStyle": "fine-line",
       "styles": ["fine-line", "minimal", "lettering"],
       "instagram": "",
@@ -33,7 +39,9 @@
     {
       "id": "a-004",
       "name": "Kaito Mori",
+      "status": "published",
       "city": "Üsküdar",
+      "side": "Asya",
       "mainStyle": "japanese",
       "styles": ["japanese", "neo-traditional", "ornamental"],
       "instagram": "",
@@ -43,7 +51,9 @@
     {
       "id": "a-005",
       "name": "Sofia Reyes",
+      "status": "published",
       "city": "Beyoğlu",
+      "side": "Avrupa",
       "mainStyle": "blackwork",
       "styles": ["blackwork", "geometric", "dotwork"],
       "instagram": "",
@@ -53,7 +63,9 @@
     {
       "id": "a-006",
       "name": "Elias Grieve",
+      "status": "published",
       "city": "Bakırköy",
+      "side": "Avrupa",
       "mainStyle": "ornamental",
       "styles": ["ornamental", "geometric", "dotwork"],
       "instagram": "",
@@ -63,7 +75,9 @@
     {
       "id": "a-007",
       "name": "Nora Halvorsen",
+      "status": "published",
       "city": "Ataşehir",
+      "side": "Asya",
       "mainStyle": "minimal",
       "styles": ["minimal", "fine-line", "lettering"],
       "instagram": "",
@@ -73,7 +87,9 @@
     {
       "id": "a-008",
       "name": "Marco Ferri",
+      "status": "published",
       "city": "Maltepe",
+      "side": "Asya",
       "mainStyle": "realism",
       "styles": ["realism", "black-and-grey", "neo-traditional"],
       "instagram": "",
@@ -83,7 +99,9 @@
     {
       "id": "a-009",
       "name": "Yuki Tan",
+      "status": "published",
       "city": "Kadıköy",
+      "side": "Asya",
       "mainStyle": "black-and-grey",
       "styles": ["black-and-grey", "dotwork", "realism"],
       "instagram": "",
@@ -93,7 +111,9 @@
     {
       "id": "a-010",
       "name": "Ida Brenner",
+      "status": "published",
       "city": "Şişli",
+      "side": "Avrupa",
       "mainStyle": "fine-line",
       "styles": ["fine-line", "minimal", "lettering"],
       "instagram": "",
@@ -103,7 +123,9 @@
     {
       "id": "a-011",
       "name": "Rafael Sol",
+      "status": "published",
       "city": "Beşiktaş",
+      "side": "Avrupa",
       "mainStyle": "traditional",
       "styles": ["traditional", "neo-traditional", "lettering"],
       "instagram": "",
@@ -113,12 +135,26 @@
     {
       "id": "a-012",
       "name": "Hana Petrova",
+      "status": "published",
       "city": "Kadıköy",
+      "side": "Asya",
       "mainStyle": "japanese",
       "styles": ["japanese", "ornamental", "geometric"],
       "instagram": "",
       "priceRange": { "min": 3800, "max": 11000 },
       "priceNote": "büyük projelerde seans bazlı"
+    },
+    {
+      "id": "arda-temeni",
+      "name": "Arda Temeni",
+      "status": "draft",
+      "city": "Bakırköy",
+      "side": "Avrupa",
+      "mainStyle": "realism",
+      "styles": ["realism", "fine-line"],
+      "instagram": "",
+      "priceRange": { "min": 2500, "max": 15000 },
+      "priceNote": "boyuta göre değişir"
     }
   ]
 }
