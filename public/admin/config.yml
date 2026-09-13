@@ -160,5 +160,5 @@ collections:
           - { label: "Ida Brenner", value: "a-010" }
           - { label: "Rafael Sol", value: "a-011" }
           - { label: "Hana Petrova", value: "a-012" }
-          - { label: "Arda Temeni", value: "arda-temeni" }
+          - { label: "Arda Chamani", value: "arda-chamani" }
       - { label: "Fotoğraf / Video", name: "image", widget: "file" }
